@@ -1,21 +1,21 @@
 <template>
   <div class="restaurant--card">
-    <div class="restaurant--image">
+    <div :style="changeBackground()" class="restaurant--image">
 
     </div>
     <div class="restaurant--informations">
       <div class="top">
         <p class="name">
-          Subway
+          {{ restaurant.name }}
         </p>
         <p class="note">
           <span>
-            4.5
+            {{ restaurant.note }}
           </span>
         </p>
       </div>
       <p class="tme">
-        20-30min
+        {{ restaurant.drive_time }}
       </p>
     </div>
   </div>
@@ -24,6 +24,20 @@
 <script>
 export default {
   name: "RestaurantCard",
+  props: {
+    restaurant: Object
+  },
+  setup(props) {
+    const changeBackground = () => {
+      return {
+        backgroundImage: `url(${props.restaurant.image})`
+      }
+    }
+
+    return {
+      changeBackground
+    }
+  }
 }
 </script>
 
@@ -41,7 +55,6 @@ export default {
           border-radius: 15px;
           background-size: cover;
           background-position: center;
-          background-image: url("https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8zNzg4MDJiMC1jNTI4LTQ4MjktYjBiNS0wY2M2NDBkZjYzY2QuanBlZw==");
         }
 
         .restaurant--informations{

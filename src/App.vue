@@ -1,16 +1,12 @@
 <template>
   <div id="app">
-    <restaurant-row/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import RestaurantRow from './components/RestaurantRow.vue'
 export default {
-  name: 'App',
-  components: {
-    RestaurantRow
-  }
+  name: 'App'
 }
 </script>
 
@@ -19,6 +15,6 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 #app {
   font-family: 'Roboto', sans-serif;
-  padding: 20px;
+  padding: 0px 20px;
 }
 </style>
