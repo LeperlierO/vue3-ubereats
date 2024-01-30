@@ -1,24 +1,24 @@
 <template>
-  <div class="restaurant--card">
-    <div :style="changeBackground()" class="restaurant--image">
+    <div class="restaurant--card">
+      <div :style="changeBackground()" class="restaurant--image">
 
-    </div>
-    <div class="restaurant--informations">
-      <div class="top">
-        <p class="name">
-          {{ restaurant.name }}
-        </p>
-        <p class="note">
-          <span>
-            {{ restaurant.note }}
-          </span>
+      </div>
+      <div class="restaurant--informations">
+        <div class="top">
+          <p class="name">
+            {{ restaurant.name }}
+          </p>
+          <p class="note">
+            <span>
+              {{ restaurant.note }}
+            </span>
+          </p>
+        </div>
+        <p class="tme">
+          {{ restaurant.drive_time }}
         </p>
       </div>
-      <p class="tme">
-        {{ restaurant.drive_time }}
-      </p>
     </div>
-  </div>
 </template>
 
 <script>
@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss">
     .restaurant--card { 
-        width: 32%;
+        width: 100%;
         height: 30vh;
 
         p {

@@ -4,7 +4,9 @@
         Nos restaurants
     </h2>
     <div class="wrapper--card">
-        <restaurant-card v-for="(card, index) in three_restaurant" :key="index" :restaurant="card"/>
+        <router-link class="restaurant--wrapper" v-for="(card, index) in three_restaurant" :key="index" :to="`/restaurant/${card.name}`">
+            <restaurant-card :restaurant="card"/>
+        </router-link>
     </div>
   </div>
 </template>
@@ -23,6 +25,11 @@ export default {
 </script>
 
 <style lang="scss">
+
+    .restaurant--wrapper{
+        width: 32%;
+        text-decoration: none;
+    }
 
     .restaurant--row {
         .wrapper--card{
